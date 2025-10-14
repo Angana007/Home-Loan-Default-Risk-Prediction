@@ -88,6 +88,18 @@ Example features:
 > The model demonstrates outstanding generalization, achieving ~95% accuracy without signs of overfitting.
 
 ---
+### 🔍 Explainable AI Insights (SHAP Analysis)
+
+The SHAP analysis reveals which features most influence loan default risk:
+
+1. **CNT_FAM_MEMBERS** and **CNT_CHILDREN** are the strongest predictors — fewer family members or more dependents increase risk.  
+2. **Employment Type and Occupation** matter: "Working" (steady job) applicants show lower risk, while "Laborers" or "Self-employed" face higher uncertainty.  
+3. **Education Level** is a strong socioeconomic indicator; applicants with only secondary education are more likely to default.  
+4. **Family Status** impacts risk — single applicants have higher default probability than married ones.  
+5. **Housing and Organization Type** (e.g., stone/brick vs. panel housing, type of employer) indirectly reflect wealth and employment stability.
+
+> These findings highlight how demographic, employment, and lifestyle features jointly influence credit risk — empowering banks to design fairer and more data-driven loan approval strategies.
+---
 
 ## 💻 Streamlit Dashboard Features
 
