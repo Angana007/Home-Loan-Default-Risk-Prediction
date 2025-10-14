@@ -8,6 +8,14 @@ To enhance **trust and interpretability**, the model is paired with **SHAP expla
 
 ---
 
+## 🚀 Highlights
+- Built a **Deep Learning model** achieving **AUC = 0.977**, detecting 91% of true defaulters.
+- Implemented **SHAP explainability** for transparent model decisions.
+- Deployed an **interactive Streamlit app** for real-time risk prediction.
+- Delivered potential **10–15% reduction in default rates** and **30% faster approvals** for lenders.
+  
+---
+
 ## 🎯 Business Objective
 Financial institutions face substantial losses from loan defaults.  
 Traditional rule-based credit scoring often fails to capture complex nonlinear relationships between income, credit behavior, and loan performance.  
@@ -15,8 +23,7 @@ Traditional rule-based credit scoring often fails to capture complex nonlinear r
 This solution:
 - Predicts the **probability of loan default** for new applicants.  
 - Highlights **key factors influencing each decision** (e.g., credit score, loan-to-income ratio).  
-- Enables **faster and more transparent approvals** via a business-friendly dashboard.
-
+- This solution demonstrates how AI-driven credit scoring can improve loan portfolio quality, streamline risk assessment, and enable data-backed financial inclusion decisions.
 ---
 
 ## ⚙️ Tech Stack
@@ -98,7 +105,7 @@ The SHAP analysis reveals which features most influence loan default risk:
 4. **Family Status** impacts risk — single applicants have higher default probability than married ones.  
 5. **Housing and Organization Type** (e.g., stone/brick vs. panel housing, type of employer) indirectly reflect wealth and employment stability.
 
-> These findings highlight how demographic, employment, and lifestyle features jointly influence credit risk — empowering banks to design fairer and more data-driven loan approval strategies.
+> These findings highlight how demographic, employment, and lifestyle features jointly influence credit risk — empowering banks to design fairer and more data-driven loan approval strategies. The model’s explainability aligns with AI governance and compliance frameworks, ensuring fairness, accountability, and transparency — key priorities in modern fintech applications.
 ---
 ## 💡 Business Impact
 
