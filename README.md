@@ -100,6 +100,19 @@ The SHAP analysis reveals which features most influence loan default risk:
 
 > These findings highlight how demographic, employment, and lifestyle features jointly influence credit risk — empowering banks to design fairer and more data-driven loan approval strategies.
 ---
+## 💡 Business Impact
+
+| Area | Benefit |
+|------|----------|
+| **Risk Management** | Identify high-risk borrowers early |
+| **Operational Efficiency** | Automates applicant screening, saving analyst time |
+| **Decision Speed** | Up to **30% faster** loan approvals |
+| **Financial Savings** | Potential **10–15% reduction** in default rates |
+| **Fairness & Transparency** | Transparent, explainable model suitable for audits |
+
+> By integrating this model into loan approval workflows, financial institutions can make faster, fairer, and more consistent lending decisions — with measurable impact on profitability.
+
+---
 
 ## 💻 Streamlit Dashboard Features
 
@@ -113,18 +126,6 @@ The interactive app provides:
 - 🔍 **SHAP Visualization:** Displays top factors increasing/decreasing risk for that applicant.  
 - 📊 **Global Importance:** SHAP summary chart for all applicants.  
 - 📂 **CSV Upload:** Batch risk scoring for loan portfolios.
-
----
-
-## 💡 Business Impact
-
-| Area | Benefit |
-|------|----------|
-| **Risk Management** | Identify high-risk borrowers early |
-| **Operational Efficiency** | Automates applicant screening, saving analyst time |
-| **Decision Speed** | Up to **30% faster** loan approvals |
-| **Financial Savings** | Potential **10–15% reduction** in default rates |
-| **Compliance** | Transparent, explainable model suitable for audits |
 
 ---
 ## 👩‍💻 Author
