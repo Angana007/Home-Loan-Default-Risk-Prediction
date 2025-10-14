@@ -94,10 +94,10 @@ Example features:
 The interactive app provides:
 - 📋 **Applicant Input Form:** Enter key fields such as income, credit, employment length, and credit score.  
 - 🧮 **Risk Score Output:** Predicts default probability with color-coded risk zone:
-  - 🟩 Low Risk (< 0.2)  
-  - 🟨 Medium Risk (0.2–0.5)  
-  - 🟧 High Risk (0.5–0.8)  
-  - 🟥 Critical (> 0.8)  
+  - Low Risk (< 0.2)  
+  - Medium Risk (0.2–0.5)  
+  - High Risk (0.5–0.8)  
+  - Critical (> 0.8)  
 - 🔍 **SHAP Visualization:** Displays top factors increasing/decreasing risk for that applicant.  
 - 📊 **Global Importance:** SHAP summary chart for all applicants.  
 - 📂 **CSV Upload:** Batch risk scoring for loan portfolios.
