@@ -132,7 +132,6 @@ The interactive app provides:
   - Critical (> 0.8)  
 - 🔍 **SHAP Visualization:** Displays top factors increasing/decreasing risk for that applicant.  
 - 📊 **Global Importance:** SHAP summary chart for all applicants.  
-- 📂 **CSV Upload:** Batch risk scoring for loan portfolios.
 
 ---
 ## 👩‍💻 Author
