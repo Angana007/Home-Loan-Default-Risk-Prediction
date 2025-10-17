@@ -1,32 +1,35 @@
 # 🏠 Home Loan Default Risk Prediction
 
 ## 📘 Project Overview
-This project develops a **deep learning model** to predict the likelihood of **home loan default** using customer demographics, credit history, and financial data.  
-The model helps lenders identify high-risk borrowers before approval — reducing financial loss and improving decision-making efficiency.
+This project builds a **deep learning–based risk prediction system** that estimates the probability of a customer **defaulting on a home loan**.  
+The model leverages **demographic, credit, and financial features** to help lenders identify **high-risk borrowers** before approval — reducing financial loss and improving credit decision efficiency.
 
-To enhance **trust and interpretability**, the model is paired with **SHAP explainability** and deployed through an **interactive Streamlit dashboard** for real-time prediction and feature-level insights.
+To ensure **trust and interpretability**, the model integrates **SHAP explainability** and is deployed via an **interactive Streamlit dashboard** for real-time predictions and feature-level insights.
 
 ---
 
-## 🚀 Highlights
-- Built a **Deep Learning model** achieving **AUC = 0.977**, detecting 91% of true defaulters.
-- Implemented **SHAP explainability** for transparent model decisions.
-- Deployed an **interactive Streamlit app** for real-time risk prediction.
-- Delivered potential **10–15% reduction in default rates** and **30% faster approvals** for lenders.
-  
+## 🚀 Key Highlights
+- Developed a **Deep Learning model (Keras/TensorFlow)** achieving **AUC = 0.977**, identifying 91% of true defaulters.  
+- Applied **ADASYN** resampling to handle severe class imbalance in the dataset.  
+- Integrated **SHAP explainability** for transparent model decisions and bias detection.  
+- Deployed a **Streamlit web app** enabling instant loan risk predictions with explainable visualizations.  
+- Enabled lenders to potentially achieve **10–15% lower default rates** and **30% faster approvals**.
+
 ---
 
-## 🎯 Business Objective
-Financial institutions face substantial losses from loan defaults.  
-Traditional rule-based credit scoring often fails to capture complex nonlinear relationships between income, credit behavior, and loan performance.  
+## 🎯 Business Problem
+Banks and financial institutions lose millions due to non-performing loans.  
+Traditional scoring systems (like rule-based thresholds) often miss **subtle nonlinear patterns** that signal credit risk.
 
-This solution:
-- Predicts the **probability of loan default** for new applicants.  
-- Highlights **key factors influencing each decision** (e.g., credit score, loan-to-income ratio).  
-- This solution demonstrates how AI-driven credit scoring can improve loan portfolio quality, streamline risk assessment, and enable data-backed financial inclusion decisions.
+This project provides:
+- A **probabilistic risk score** for every new applicant.  
+- **Feature-level explanations** showing why a prediction was made.  
+- A deployable, interpretable model that enhances **risk management and decision transparency**.
+
 ---
 
 ## ⚙️ Tech Stack
+
 | Layer | Tools & Libraries |
 |-------|-------------------|
 | Data Processing | Pandas, NumPy, Seaborn, Matplotlib |
@@ -34,52 +37,51 @@ This solution:
 | Modeling | **Keras / TensorFlow** |
 | Scaling | StandardScaler |
 | Explainability | **SHAP** |
-| Deployment | **Streamlit Cloud** |
+| Deployment | **Streamlit** |
 | Metrics | ROC-AUC, Sensitivity, Specificity, F1-Score |
 
 ---
 
 ## 📊 Dataset
-- **Source:** Modified version of [Home Credit Default Risk dataset](https://www.kaggle.com/c/home-credit-default-risk)  
-- **Rows:** 307,511 applicants  
-- **Columns:** 122 financial, demographic, and credit features  
+- **Source:** Modified version of [Home Credit Default Risk (Kaggle)](https://www.kaggle.com/c/home-credit-default-risk)  
+- **Size:** 307,511 applicants × 122 features  
+- **Type:** Financial, demographic, and credit bureau information  
 
-Example features:
 | Feature | Description |
 |----------|-------------|
-| `AMT_INCOME_TOTAL` | Total applicant income |
-| `AMT_CREDIT` | Loan amount requested |
-| `CODE_GENDER` | Applicant gender |
-| `NAME_EDUCATION_TYPE` | Education level |
+| `AMT_INCOME_TOTAL` | Applicant’s total income |
+| `AMT_CREDIT` | Loan amount applied for |
 | `DAYS_EMPLOYED` | Employment duration |
+| `NAME_EDUCATION_TYPE` | Applicant’s education level |
+| `CODE_GENDER` | Gender |
 | `TARGET` | 1 = Defaulted, 0 = Repaid |
 
 ---
 
 ## 🧠 Modeling Workflow
 
-1. **Data Cleaning & Imputation**
-   - Filled missing numeric values with median  
-   - Imputed categorical columns using mode  
+1. **Data Preprocessing**  
+   - Filled missing numeric values with median and categorical with mode.  
+   - One-hot encoded categorical variables.  
 
-2. **Encoding & Balancing**
-   - One-hot encoded categorical variables  
-   - Addressed severe class imbalance using **ADASYN** to synthesize minority (defaulter) samples  
+2. **Class Balancing**  
+   - Addressed 1:10 imbalance using **ADASYN** to synthesize minority (defaulter) samples.
 
-3. **Feature Scaling**
-   - Standardized all numeric features via `StandardScaler`  
+3. **Feature Scaling**  
+   - Applied `StandardScaler` to normalize numerical features.
 
-4. **Deep Learning Model**
-   - 3-layer **feed-forward neural network**  
-   - Regularization: `Dropout` + `L2` penalty  
-   - Batch Normalization for stable convergence  
-   - Early stopping to prevent overfitting  
+4. **Model Architecture**  
+   - 3-layer **Feedforward Neural Network** with:  
+     - Batch Normalization  
+     - Dropout + L2 regularization  
+     - ReLU activation and Sigmoid output  
+     - EarlyStopping to avoid overfitting  
 
-5. **Evaluation Metrics**
-   - **AUC = 0.977** → Excellent discrimination ability  
-   - **Sensitivity = 0.91** → Captures 91% of true defaulters  
-   - **Specificity = 0.9997** → Minimizes false alarms  
-   - **F1 = 0.95** → Strong precision-recall balance  
+5. **Evaluation Metrics**  
+   - **AUC = 0.977**  
+   - **Sensitivity = 0.91**  
+   - **Specificity = 0.9997**  
+   - **F1-Score = 0.95**
 
 ---
 
@@ -88,52 +90,51 @@ Example features:
 | Metric | Score | Interpretation |
 |--------|-------|----------------|
 | AUC | **0.977** | Excellent separation between classes |
-| Sensitivity | **0.908** | Catches most true defaulters |
-| Specificity | **0.9997** | Very few false positives |
-| F1-Score | **0.952** | High precision & recall balance |
+| Sensitivity | **0.908** | Accurately detects defaulters |
+| Specificity | **0.9997** | Minimizes false positives |
+| F1-Score | **0.952** | Strong precision-recall balance |
 
-> The model demonstrates outstanding generalization, achieving ~95% accuracy without signs of overfitting.
+> The model generalizes well with stable validation performance and no signs of overfitting.
 
 ---
-### 🔍 Explainable AI Insights (SHAP Analysis)
 
-The SHAP analysis reveals which features most influence loan default risk:
+## 🔍 Explainable AI Insights (SHAP)
 
-1. **CNT_FAM_MEMBERS** and **CNT_CHILDREN** are the strongest predictors — fewer family members or more dependents increase risk.  
-2. **Employment Type and Occupation** matter: "Working" (steady job) applicants show lower risk, while "Laborers" or "Self-employed" face higher uncertainty.  
-3. **Education Level** is a strong socioeconomic indicator; applicants with only secondary education are more likely to default.  
-4. **Family Status** impacts risk — single applicants have higher default probability than married ones.  
-5. **Housing and Organization Type** (e.g., stone/brick vs. panel housing, type of employer) indirectly reflect wealth and employment stability.
+The **SHAP analysis** provides local and global interpretability:  
 
-> These findings highlight how demographic, employment, and lifestyle features jointly influence credit risk — empowering banks to design fairer and more data-driven loan approval strategies. The model’s explainability aligns with AI governance and compliance frameworks, ensuring fairness, accountability, and transparency — key priorities in modern fintech applications.
+- **CNT_FAM_MEMBERS** and **CNT_CHILDREN** strongly affect repayment ability.  
+- **Employment stability** (“Working” vs “Self-employed”) and **education level** influence credit reliability.  
+- **Family status** (single vs married) and **housing type** correlate with financial discipline.  
+- Global SHAP plots highlight that **income, credit-to-income ratio, and employment duration** are key drivers of default risk.  
+
+> These insights promote explainable, auditable, and bias-aware lending decisions — aligning with modern AI governance in fintech.
+
 ---
+
+## 💻 Streamlit Dashboard
+
+**Interactive features:**
+- 🧾 **Applicant Input Form:** Enter key attributes like income, credit, and employment details.  
+- 📊 **Prediction Output:** Displays probability of default with intuitive color-coded risk zones.  
+- 🧠 **SHAP Visualizations:**  
+  - Local feature importance (individual prediction explanation)  
+  - Global feature importance (overall model behavior)  
+- 🎛️ **Preset Scenarios:** Choose *High-Risk* or *Low-Risk* applicant profiles to test model behavior.
+
+---
+
 ## 💡 Business Impact
 
 | Area | Benefit |
 |------|----------|
-| **Risk Management** | Identify high-risk borrowers early |
-| **Operational Efficiency** | Automates applicant screening, saving analyst time |
-| **Decision Speed** | Up to **30% faster** loan approvals |
-| **Financial Savings** | Potential **10–15% reduction** in default rates |
-| **Fairness & Transparency** | Transparent, explainable model suitable for audits |
+| **Risk Management** | Identify defaulters before approval |
+| **Operational Efficiency** | Automates screening, reduces manual workload |
+| **Decision Speed** | ~30% faster loan processing |
+| **Financial Savings** | 10–15% reduction in default losses |
+| **Fair & Transparent Lending** | SHAP-backed explainability for auditors and regulators |
 
-> By integrating this model into loan approval workflows, financial institutions can make faster, fairer, and more consistent lending decisions — with measurable impact on profitability.
+---  
 
----
-
-## 💻 Streamlit Dashboard Features
-
-The interactive app provides:
-- 📋 **Applicant Input Form:** Enter key fields such as income, credit, employment length, and credit score.  
-- 🧮 **Risk Score Output:** Predicts default probability with color-coded risk zone:
-  - Low Risk (< 0.2)  
-  - Medium Risk (0.2–0.5)  
-  - High Risk (0.5–0.8)  
-  - Critical (> 0.8)  
-- 🔍 **SHAP Visualization:** Displays top factors increasing/decreasing risk for that applicant.  
-- 📊 **Global Importance:** SHAP summary chart for all applicants.  
-
----
 ## 👩‍💻 Author
 **Angana Chakraborty**  
 AI/ML Engineer | Data Analyst | Researcher  
